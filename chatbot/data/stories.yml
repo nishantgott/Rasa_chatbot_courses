@@ -36,4 +36,11 @@ stories:
   - intent: give_courses
   - action: action_give_courses
 
+- story: list all courses
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_categories
+  - action: action_give_categories
+
 

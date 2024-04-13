@@ -9,6 +9,7 @@ intents:
   - mood_unhappy
   - bot_challenge
   - give_courses
+  - give_categories
 
 responses:
   utter_greet:
@@ -33,6 +34,7 @@ responses:
 
 actions:
   - action_give_courses
+  - action_give_categories
 
 session_config:
   session_expiration_time: 60

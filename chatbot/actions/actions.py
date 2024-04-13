@@ -45,3 +45,16 @@ class ActionGiveCourses(Action):
         return []
 
 
+class ActionGiveCategories(Action):
+
+    def name(self) -> Text:
+        return "action_give_categories"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(text="DS and Algorithms \nPlacement and Test Series \nProgramming Languages \nWeb Development \nMachine Learning and Data Science \nSchool \nGATE")
+
+        return []
+

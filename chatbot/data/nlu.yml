@@ -106,3 +106,18 @@ nlu:
     - What kind of courses are available?
     - Could you give me details about the courses?
     - I want to explore the course catalog.
+
+- intent: give_categories
+  examples: |
+    - List all the categories of courses
+    - What kind of courses do you have
+    - What are the different course categories available?
+    - Show me the list of course categories.
+    - Can you provide an overview of your course categories?
+    - I'm interested in exploring your course categories.
+    - Could you please tell me about the categories of courses you offer?
+    - List down all the categories of courses you provide.
+    - I'd like to know the types of courses you offer.
+    - Are there specific categories I can choose from for your courses?
+    - Tell me about the categories of courses available on your platform.
+    - Give me an idea of the course categories I can expect.
