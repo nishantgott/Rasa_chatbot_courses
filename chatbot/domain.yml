@@ -10,6 +10,13 @@ intents:
   - bot_challenge
   - give_courses
   - give_categories
+  - give_dsa_courses
+  - give_pts_courses
+  - give_pl_courses
+  - give_wd_courses
+  - give_ml_courses
+  - give_school_courses
+  - give_gate_courses
 
 responses:
   utter_greet:
@@ -35,6 +42,13 @@ responses:
 actions:
   - action_give_courses
   - action_give_categories
+  - action_give_dsa_courses
+  - action_give_pts_courses
+  - action_give_pl_courses
+  - action_give_wd_courses
+  - action_give_ml_courses
+  - action_give_school_courses
+  - action_give_gate_courses
 
 session_config:
   session_expiration_time: 60

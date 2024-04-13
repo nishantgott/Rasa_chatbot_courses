@@ -43,4 +43,39 @@ stories:
   - intent: give_categories
   - action: action_give_categories
 
+- story: list dsa courses
+  steps:
+  - intent: give_dsa_courses
+  - action: action_give_dsa_courses
+
+- story: list pts courses
+  steps:
+  - intent: give_pts_courses
+  - action: action_give_pts_courses
+
+- story: list pl courses
+  steps:
+  - intent: give_pl_courses
+  - action: action_give_pl_courses
+
+- story: list wd courses
+  steps:
+  - intent: give_wd_courses
+  - action: action_give_wd_courses
+
+- story: list ml courses
+  steps:
+  - intent: give_ml_courses
+  - action: action_give_ml_courses
+
+- story: list school courses
+  steps:
+  - intent: give_school_courses
+  - action: action_give_school_courses
+
+- story: list gate courses
+  steps:
+    - intent: give_gate_courses
+    - action: action_give_gate_courses
+
 

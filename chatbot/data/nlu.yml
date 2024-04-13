@@ -121,3 +121,100 @@ nlu:
     - Are there specific categories I can choose from for your courses?
     - Tell me about the categories of courses available on your platform.
     - Give me an idea of the course categories I can expect.
+
+- intent: give_dsa_courses
+  examples: |
+    - List all the dsa courses
+    - Give me courses related to data stuctures and algorithms
+    - Do you have any courses for data structures
+    - Show me the data structures and algorithms courses.
+    - Can you recommend any courses on data structures and algorithms?
+    - List down all the courses that cover data structures and algorithms.
+    - I'm looking for courses specifically on data structures and algorithms.
+    - Are there any specialized courses for learning data structures and algorithms?
+    - Give me an overview of the DSA courses available.
+    - Which courses do you offer that focus on data structures?
+    - I want to explore courses related to data structures. Can you help?
+    - What options do I have for learning about data structures and algorithms?
+    - Can you point me to the courses that teach data structures and algorithms?
+
+- intent: give_pts_courses
+  examples: |
+    - Show me the placement and test series courses.
+    - Can you recommend any courses for placement preparation and test series?
+    - List down all the courses related to placement and test series.
+    - I'm looking for courses specifically focused on placement and test series.
+    - Are there any specialized courses for placement preparation and test series?
+    - Give me an overview of the placement and test series courses available.
+    - Which courses do you offer that focus on placement preparation?
+    - I want to explore courses related to placement and test series. Can you help?
+    - What options do I have for preparing for placements and test series?
+    - Can you point me to the courses that offer placement preparation and test series?
+
+- intent: give_pl_courses
+  examples: |
+    - Show me the programming languages courses.
+    - Can you recommend any courses for learning programming languages?
+    - List down all the courses related to programming languages.
+    - I'm looking for courses specifically focused on programming languages.
+    - Are there any specialized courses for learning different programming languages?
+    - Give me an overview of the programming languages courses available.
+    - Which courses do you offer that focus on teaching programming languages?
+    - I want to explore courses related to programming languages. Can you help?
+    - What options do I have for learning various programming languages?
+    - Can you point me to the courses that offer programming language tutorials?
+
+
+- intent: give_wd_courses
+  examples: |
+    - Show me the web development courses.
+    - Can you recommend any courses for learning web development?
+    - List down all the courses related to web development.
+    - I'm looking for courses specifically focused on web development.
+    - Are there any specialized courses for learning web development technologies?
+    - Give me an overview of the web development courses available.
+    - Which courses do you offer that focus on teaching web development?
+    - I want to explore courses related to web development. Can you help?
+    - What options do I have for learning web development skills?
+    - Can you point me to the courses that offer web development tutorials?
+
+
+- intent: give_ml_courses
+  examples: |
+    - Show me the machine learning and data science courses.
+    - Can you recommend any courses for learning machine learning or data science?
+    - List down all the courses related to machine learning and data science.
+    - I'm looking for courses specifically focused on machine learning or data science.
+    - Are there any specialized courses for learning machine learning and data science?
+    - Give me an overview of the machine learning and data science courses available.
+    - Which courses do you offer that focus on teaching machine learning or data science?
+    - I want to explore courses related to machine learning or data science. Can you help?
+    - What options do I have for learning machine learning and data science skills?
+    - Can you point me to the courses that offer machine learning or data science tutorials?
+
+
+- intent: give_school_courses
+  examples: |
+    - Show me the courses for school education.
+    - Can you recommend any courses for students in school?
+    - List down all the courses related to school education.
+    - I'm looking for courses specifically designed for school students.
+    - Are there any specialized courses for subjects taught in schools?
+    - Give me an overview of the school courses available.
+    - Which courses do you offer that focus on teaching school subjects?
+    - I want to explore courses related to school education. Can you help?
+    - What options do I have for learning subjects taught in schools?
+    - Can you point me to the courses that offer tutorials for school students?
+
+- intent: give_gate_courses
+  examples: |
+    - Show me the GATE preparation courses.
+    - Can you recommend any courses for GATE exam preparation?
+    - List down all the courses related to GATE preparation.
+    - I'm looking for courses specifically designed for GATE aspirants.
+    - Are there any specialized courses for GATE exam subjects?
+    - Give me an overview of the GATE preparation courses available.
+    - Which courses do you offer that focus on GATE exam subjects?
+    - I want to explore courses related to GATE exam preparation. Can you help?
+    - What options do I have for preparing for the GATE exam?
+    - Can you point me to the courses that offer tutorials for GATE exam preparation?
