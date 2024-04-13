@@ -89,3 +89,20 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    
+
+- intent: give_courses
+  examples: |
+    - List all the courses you have
+    - What are the courses you have
+    - Tell me all the courses
+    - Can you provide a list of available courses?
+    - I'm interested in knowing about the courses offered.
+    - Which courses does your platform offer?
+    - Could you share the available courses with me?
+    - What options do I have in terms of courses?
+    - Show me the list of courses available.
+    - I'd like to see the courses you offer.
+    - What kind of courses are available?
+    - Could you give me details about the courses?
+    - I want to explore the course catalog.
