@@ -88,4 +88,14 @@ stories:
     - intent: give_paid_courses
     - action: action_give_paid_courses
 
+- story: list self paced courses
+  steps:
+    - intent: give_paced_courses
+    - action: action_give_paced_courses
+
+- story: list live courses
+  steps:
+    - intent: give_live_courses
+    - action: action_give_live_courses
+
 

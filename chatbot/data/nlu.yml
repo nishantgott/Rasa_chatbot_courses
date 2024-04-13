@@ -248,3 +248,30 @@ nlu:
     - Do you offer any courses that require a subscription or payment?
     - Are there any options for paid enrollment in courses?
 
+
+- intent: give_paced_courses
+  examples: |
+    - Show me the self paced courses
+    - Can you recommend any self-paced courses?
+    - List down all the courses that are self-paced.
+    - I'm looking for courses that I can take at my own pace.
+    - Show me courses that allow flexible learning schedules.
+    - Are there any courses available that I can complete at my own speed?
+    - Give me an overview of the self-paced courses.
+    - Which courses offer the option to learn at my own pace?
+    - Can you show me the list of courses with self-paced options?
+    - Do you offer any courses that are not time-bound?
+    - Are there any options for asynchronous learning?
+
+- intent: give_live_courses
+  examples: |
+    - Show me the live courses.
+    - Can you recommend any courses that are live?
+    - List down all the courses that are conducted live.
+    - I'm interested in courses with live instruction.
+    - Are there any courses available that are taught in real-time?
+    - Give me an overview of the live courses.
+    - Which courses offer live sessions or live streaming?
+    - Can you show me the list of courses with live instruction?
+    - Do you offer any courses that include live webinars or live lectures?
+    - Are there any options for participating in live classes?

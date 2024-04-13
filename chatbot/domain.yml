@@ -19,6 +19,8 @@ intents:
   - give_gate_courses
   - give_free_courses
   - give_paid_courses
+  - give_paced_courses
+  - give_live_courses
 
 responses:
   utter_greet:
@@ -53,6 +55,8 @@ actions:
   - action_give_gate_courses
   - action_give_free_courses
   - action_give_paid_courses
+  - action_give_paced_courses
+  - action_give_live_courses
 
 session_config:
   session_expiration_time: 60

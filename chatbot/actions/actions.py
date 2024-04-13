@@ -273,3 +273,52 @@ class ActionGivePaidCourses(Action):
         dispatcher.utter_message(text="PLEASE CHOOSE THE COURSE NUMBER")
 
         return []
+
+
+
+class ActionGivePacedCourses(Action):
+
+    def name(self) -> Text:
+        return "action_give_paced_courses"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            courses_collection = db["courses"]
+            courses_data = courses_collection.find()
+            courses_message = "Here is a list of self paced courses:\n"
+            for course in courses_data:
+                if course['pace'] == 'Self-paced':
+                    courses_message += f"{course['course_no']}: {course['course_name']}\n"
+            dispatcher.utter_message(text=courses_message)
+        except Exception as e:
+            print("Error retrieving data from MongoDB:", str(e))
+        dispatcher.utter_message(text="PLEASE CHOOSE THE COURSE NUMBER")
+
+        return []
+
+
+class ActionGiveLiveCourses(Action):
+
+    def name(self) -> Text:
+        return "action_give_live_courses"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            courses_collection = db["courses"]
+            courses_data = courses_collection.find()
+            courses_message = "Here is a list of live courses:\n"
+            for course in courses_data:
+                if course['pace'] != 'Self-paced':
+                    courses_message += f"{course['course_no']}: {course['course_name']}\n"
+            dispatcher.utter_message(text=courses_message)
+        except Exception as e:
+            print("Error retrieving data from MongoDB:", str(e))
+        dispatcher.utter_message(text="PLEASE CHOOSE THE COURSE NUMBER")
+
+        return []
