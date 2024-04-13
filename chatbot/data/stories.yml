@@ -78,4 +78,14 @@ stories:
     - intent: give_gate_courses
     - action: action_give_gate_courses
 
+- story: list free courses
+  steps:
+    - intent: give_free_courses
+    - action: action_give_free_courses
+
+- story: list paid courses
+  steps:
+    - intent: give_paid_courses
+    - action: action_give_paid_courses
+
 

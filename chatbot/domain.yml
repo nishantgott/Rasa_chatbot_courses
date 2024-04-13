@@ -17,6 +17,8 @@ intents:
   - give_ml_courses
   - give_school_courses
   - give_gate_courses
+  - give_free_courses
+  - give_paid_courses
 
 responses:
   utter_greet:
@@ -49,6 +51,8 @@ actions:
   - action_give_ml_courses
   - action_give_school_courses
   - action_give_gate_courses
+  - action_give_free_courses
+  - action_give_paid_courses
 
 session_config:
   session_expiration_time: 60

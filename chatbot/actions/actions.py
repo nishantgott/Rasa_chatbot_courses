@@ -71,7 +71,7 @@ class ActionGiveDsaCourses(Action):
         try:
             courses_collection = db["courses"]
             courses_data = courses_collection.find()
-            courses_message = "Here are the available courses:\n"
+            courses_message = "Here are the available courses for Data structures and algorithms:\n"
             for course in courses_data:
                 if course['category'] == 'DS and Algorithms':
                     courses_message += f"{course['course_no']}: {course['course_name']}\n"
@@ -95,7 +95,7 @@ class ActionGivePtsCourses(Action):
         try:
             courses_collection = db["courses"]
             courses_data = courses_collection.find()
-            courses_message = "Here are the available courses:\n"
+            courses_message = "Here are the available courses for placement and tests:\n"
             for course in courses_data:
                 if course['category'] == 'Placement and Test Series':
                     courses_message += f"{course['course_no']}: {course['course_name']}\n"
@@ -119,7 +119,7 @@ class ActionGivePlCourses(Action):
         try:
             courses_collection = db["courses"]
             courses_data = courses_collection.find()
-            courses_message = "Here are the available courses:\n"
+            courses_message = "Here is a list of courses to help you learn programming languages\n"
             for course in courses_data:
                 if course['category'] == 'Programming Languages':
                     courses_message += f"{course['course_no']}: {course['course_name']}\n"
@@ -143,7 +143,7 @@ class ActionGiveWdCourses(Action):
         try:
             courses_collection = db["courses"]
             courses_data = courses_collection.find()
-            courses_message = "Here are the available courses:\n"
+            courses_message = "These are all the available web development courses:\n"
             for course in courses_data:
                 if course['category'] == 'Web Development':
                     courses_message += f"{course['course_no']}: {course['course_name']}\n"
@@ -167,7 +167,7 @@ class ActionGiveMlCourses(Action):
         try:
             courses_collection = db["courses"]
             courses_data = courses_collection.find()
-            courses_message = "Here are the available courses:\n"
+            courses_message = "Here are the available courses for Machine Learning and Data Science:\n"
             for course in courses_data:
                 if course['category'] == 'Machine Learning and Data Science':
                     courses_message += f"{course['course_no']}: {course['course_name']}\n"
@@ -215,9 +215,57 @@ class ActionGiveGateCourses(Action):
         try:
             courses_collection = db["courses"]
             courses_data = courses_collection.find()
-            courses_message = "Here are the available courses:\n"
+            courses_message = "Here is a list of courses to help you crack GATE!\n"
             for course in courses_data:
                 if course['category'] == 'GATE':
+                    courses_message += f"{course['course_no']}: {course['course_name']}\n"
+            dispatcher.utter_message(text=courses_message)
+        except Exception as e:
+            print("Error retrieving data from MongoDB:", str(e))
+        dispatcher.utter_message(text="PLEASE CHOOSE THE COURSE NUMBER")
+
+        return []
+
+
+class ActionGiveFreeCourses(Action):
+
+    def name(self) -> Text:
+        return "action_give_free_courses"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            courses_collection = db["courses"]
+            courses_data = courses_collection.find()
+            courses_message = "Here is a list of free courses:\n"
+            for course in courses_data:
+                if course['price'] == 0:
+                    courses_message += f"{course['course_no']}: {course['course_name']}\n"
+            dispatcher.utter_message(text=courses_message)
+        except Exception as e:
+            print("Error retrieving data from MongoDB:", str(e))
+        dispatcher.utter_message(text="PLEASE CHOOSE THE COURSE NUMBER")
+
+        return []
+
+
+class ActionGivePaidCourses(Action):
+
+    def name(self) -> Text:
+        return "action_give_paid_courses"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            courses_collection = db["courses"]
+            courses_data = courses_collection.find()
+            courses_message = "Here is a list of paid courses:\n"
+            for course in courses_data:
+                if course['price'] != 0:
                     courses_message += f"{course['course_no']}: {course['course_name']}\n"
             dispatcher.utter_message(text=courses_message)
         except Exception as e:

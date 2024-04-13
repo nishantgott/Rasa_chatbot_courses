@@ -218,3 +218,33 @@ nlu:
     - I want to explore courses related to GATE exam preparation. Can you help?
     - What options do I have for preparing for the GATE exam?
     - Can you point me to the courses that offer tutorials for GATE exam preparation?
+
+- intent: give_free_courses
+  examples: |
+    - Show me the free courses.
+    - Can you recommend any courses that are free
+    - List down all the courses that do not cost any money
+    - I'm looking for courses that don't require payment.
+    - Are there any free courses available?
+    - Show me courses with no cost.
+    - Can you suggest any courses that are available for free?
+    - List all the courses that are offered for free.
+    - Which courses can I access without paying anything?
+    - Show me the list of courses that are free of charge.
+    - Do you have any courses that are free to enroll in?
+    - Are there any no-cost options for learning available?
+    - Can you provide information on courses that are free of charge?
+
+- intent: give_paid_courses
+  examples: |
+    - Show me the paid courses.
+    - Can you recommend any courses that require payment?
+    - List down all the courses that are paid.
+    - I'm interested in courses that come with a cost.
+    - Are there any premium courses available?
+    - Give me an overview of the paid courses.
+    - Which courses require payment to access?
+    - Can you show me the list of courses that are not free?
+    - Do you offer any courses that require a subscription or payment?
+    - Are there any options for paid enrollment in courses?
+
