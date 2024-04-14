@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-course_no",
+      "2": "I-course_no",
+      "3": "L-course_no",
+      "4": "U-course_no",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-course_no": 1,
+      "I-course_no": 2,
+      "L-course_no": 3,
+      "U-course_no": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]

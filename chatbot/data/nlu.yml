@@ -285,3 +285,322 @@ nlu:
     - please choose course [12](course_no)
     - choose [13](course_no)
     - [20](course_no)
+
+- intent: ask_pace
+  examples: |
+    - Is it paced?
+    - What is the pace of this course?
+    - Is this a live course or self paced course?
+    - Is it live or self paced
+    - How fast does the course progress?
+    - Could you tell me about the pacing of this course?
+    - Is there a set schedule for this course?
+    - What is the learning speed for this course?
+    - Can I study at my own pace?
+    - Does this course have a fixed timetable?
+    - What is the pace like for this course?
+    - Is the course structured with specific deadlines?
+    - Can I take the course at any time, or is it time-bound?
+    - Is there a timeline for completing the course?
+    - Is the course instructor-led or self-guided?
+    - What type of course format does it follow, live or self-paced?
+    - Will I have to keep up with a schedule, or can I study whenever I want?
+    - Are there regular class sessions, or can I access the material whenever I want?
+    - Is the course divided into modules with set durations, or can I complete it at my own speed?
+    - Will I have access to pre-recorded lectures, or are there live sessions that I need to attend?
+    
+
+- intent: ask_price
+  examples: |
+    - Is it a free course
+    - Is it a paid course
+    - What is the price of this course 
+    - Is this course free or paid
+    - Can I enroll in this course for free?
+    - Do I need to pay for this course?
+    - How much does this course cost?
+    - What are the pricing options for this course?
+    - Is there a fee associated with this course?
+    - Can you provide information on the course fees?
+    - Are there any charges for accessing this course?
+    - Do I have to purchase this course to access it?
+    - What are the payment requirements for this course?
+    - Can you clarify the pricing structure for this course?
+
+- intent: ask_duration
+  examples: |
+    - How long is it?
+    - What is it's duration?
+    - How long does it take to complete
+    - How many weeks/months does it take?
+    - What is the duration of this course?
+    - How long does this course last for?
+    - Can you tell me the length of this course?
+    - How much time does it take to complete this course?
+    - What is the duration of the entire course?
+    - Is there a specific timeframe for completing this course?
+    - Can you provide information on the course duration?
+    - How many weeks/months does this course span?
+    - What is the expected time commitment for this course?
+    - Do you have any details on the duration of this course?
+    - Can you clarify the duration of the course curriculum?
+    - How many hours of study are required for this course?
+    - How many hours of study are required for it?
+
+- intent: ask_mentor
+  examples: |
+    - Who is the mentor of this course?
+    - Who is the mentor ?
+    - Who is the instructor of this course?
+    - Who is the instructor ?
+    - Who taught this course
+    - Can you provide information about the course instructor?
+    - Who will be leading the sessions for this course?
+    - Who will be leading the sessions 
+    - Is there a specific mentor assigned to this course?
+    - Is there a specific mentor 
+    - Can you tell me more about the teacher for this course?
+    - Can you tell me more about the teacher ?
+    - Who is responsible for teaching this course?
+    - Do you have details on the mentorship for this course?
+    - Can you tell me about the faculty member for this course?
+    - Who will be guiding students through this course?
+    - Is there someone I can contact for course-related questions?
+    - Can you provide the name of the course facilitator?
+
+
+- intent: ask_overview
+  examples: |
+    - What is the overview of this course?
+    - What is the overview ?
+    - Does this course stand out from other courses
+    - How does this course stand out from other courses
+    - How is this course different from other courses
+    - How is this course different 
+    - How is this course better than other courses
+    - Is this course still relevant
+    - Is it still relevant
+    - Can you give me an overview of what this course covers?
+    - Can you describe the unique features of this course?
+    - Can you describe the unique features?
+    - How does this course compare to similar courses in the market?
+    - What makes this course distinctive compared to others?
+    - Can you highlight the key selling points of this course?
+    - What sets this course apart from other offerings?
+    - Is there anything specific that makes this course stand out?
+    - Is there anything specific that makes it stand out?
+    - Can you provide insights into why I should choose this course over others?
+    - Can you provide insights into why I should choose it over others?
+
+- intent: ask_online
+  examples: |
+    - Is this course online or offline
+    - Is it online or offline
+    - Is this course online
+    - Is it course online
+    - Is this course offline?
+    - Is it course offline?
+    - Is this course taught in class or on internet
+    - Is it taught in class or on internet
+    - Can you confirm if this course is conducted online?
+    - Is this course available for remote learning?
+    - Is it available for remote learning?
+    - Can you clarify whether this course is delivered over the internet?
+    - Can you tell me if this course is available in an online format?
+    - Can you tell me if it is available in an online format?
+    - Does this course require physical attendance or is it entirely online?
+    - Does it require physical attendance or is it entirely online?
+    - Can you provide information on the delivery mode of this course?
+    - Is this course offered through virtual classrooms or traditional classrooms?
+    - Is it offered through virtual classrooms or traditional classrooms?
+    - Can you confirm if this course can be accessed remotely?
+    - Can you confirm if it can be accessed remotely?
+    - Is this course accessible via the internet or is it conducted in-person?
+    - Is it accessible via the internet or is it conducted in-person?
+    - Can you specify if this course is taught online or in a physical location?
+    - Can you specify if it is taught online or in a physical location?
+
+- intent: ask_doubt_support
+  examples: |
+    - Does this course have doubt support?
+    - Does it have doubt support?
+    - How is the doubt support for this course
+    - What do I do if I have any doubts in the course?
+    - What do I do if I have any doubts ?
+    - Can I get assistance with my doubts while taking this course?
+    - How does the course handle student questions and concerns?
+    - Is there a mechanism in place to address doubts during the course?
+    - What options are available for seeking help with course-related questions?
+    - Can you provide information about the support available for resolving doubts?
+    - How are doubts and questions from students addressed in this course?
+    - Is there a dedicated platform or system for seeking clarification on course content?
+    - What kind of support is provided to students who encounter difficulties or have questions?
+    - Can you explain the process for getting help with any uncertainties or queries about the course?
+    - Are there resources available to help students with any challenges they face while studying the course material?
+
+- intent: ask_rating
+  examples: |
+    - What is the rating
+    - Is this course good
+    - Is this course bad
+    - Is it good?
+    - How good is it?
+    - Do people like it?
+    - Do users like this course?
+    - What is the rating of this course
+    - Can you provide the rating for this course?
+    - How well is this course rated by users?
+    - What is the average rating of this course?
+    - What is the average rating?
+    - Can you tell me the overall rating for this course?
+    - Is there any feedback or ratings available for this course?
+    - How do users rate this course in terms of quality?
+    - Can you give me an idea of the user satisfaction rating for this course?
+    - Is there any information on the course's performance or user feedback?
+    - Can you share the rating or reviews given by other learners for this course?
+
+    
+
+
+- intent: ask_testimonials
+  examples: |
+    - What are the testimonials for this course?
+    - Where can I get testimonials for this course ?
+    - Where can I get some testimonials ?
+    - Can you provide testimonials from students who have taken this course?
+    - Can you provide testimonials ?
+    - Are there any reviews or testimonials available for this course?
+    - Where can I find testimonials or feedback from previous students?
+    - Can you share some success stories or testimonials related to this course?
+    - Are there any testimonials or endorsements from satisfied learners?
+    - Can I see some testimonials or recommendations from people who have taken this course?
+    - Where can I read about the experiences of past students with this course?
+    - Where can I read about the experiences of past students ?
+    - Do you have any testimonials or reviews from people who have benefited from this course?
+    - Can you point me to some testimonials or case studies that demonstrate the effectiveness of this course?
+    - How was others experience with this course
+
+- intent: ask_kind
+  examples: |
+    - What kind of course is this?
+    - What kind is it?
+    - What type of course is this?
+    - Can you tell me the nature of this course?
+    - What category does this course fall into?
+    - What category does it fall into?
+    - How would you describe the genre of this course?
+    - What is the classification of this course?
+    - Can you specify the type of content covered in this course?
+    - What is the format or style of instruction for this course?
+    - Is this course categorized under a specific type or genre?
+    - Can you provide information on the classification of this course?
+    - How would you characterize the educational focus of this course?
+    - Can you describe the nature or genre of this educational offering?
+
+- intent: ask_description
+  examples: |
+    - What is the description of this course?
+    - Describe this course
+    - Describe it
+    - Give a short summary of the course
+    - Give a short summary 
+    - Can you provide brief details about this course?
+    - I'd like to know about what this course entails.
+    - Could you offer some information on the content of this course?
+    - What can I expect to learn from this course?
+    - Could you provide a brief overview of the course content?
+    - Can you describe the main focus areas of this course?
+    - I'd appreciate it if you could provide a summary of this course.
+    - Can you give me a general idea of what I'll be studying in this course?
+    - What is this course about
+    - What is it about
+
+
+- intent: ask_certificate
+  examples: |
+    - Does this course have any certificate?
+    - Do I get any certificate for this course?
+    - Is the certificate of this course useful
+    - Can I earn a certificate upon completion of this course?
+    - Does this course offer any certification or credential?
+    - Is there a certificate available for completing this course?
+    - Can you tell me about the certification options for this course?
+    - Will I receive any formal recognition for completing this course?
+    - Is the certificate provided by this course recognized or accredited?
+    - Can you provide information about the value of the certificate offered by this course?
+    - What are the benefits of obtaining the certificate for this course?
+    - Is the certificate awarded for this course beneficial for career advancement?
+    - Can you explain the significance of the certificate in relation to this course?
+
+
+- intent: ask_difficulty
+  examples: |
+    - What is the difficulty of this course?
+    - How hard is this course?
+    - How hard is it?
+    - How easy is it?
+    - Is it difficult
+    - Can you provide insight into the level of difficulty for this course?
+    - How challenging is this course for students?
+    - Would you characterize this course as easy, moderate, or difficult?
+    - Can you give me an idea of the learning curve for this course?
+    - What level of proficiency or experience is required for this course?
+    - Is this course suitable for beginners, intermediate learners, or advanced students?
+    - Can you describe the complexity of the topics covered in this course?
+    - How much prior knowledge or background is needed to succeed in this course?
+    - Can you give me an indication of the course's level of difficulty compared to other offerings?
+
+- intent: ask_aid
+  examples: |
+    - Does this course offer financial aid for under-privileged people ?
+    - Are there any financial assistance options available for this course?
+    - Does this course provide support for students with financial need?
+    - Can you tell me if there are scholarships or grants available for this course?
+    - Is there any aid or funding available to help cover the cost of this course?
+    - Can you provide information on financial aid opportunities for disadvantaged individuals?
+    - Does this course offer assistance for students who may face financial barriers?
+    - Can you clarify if there are discounts or waivers available for students in need?
+    - Can you provide details on any initiatives aimed at making this course accessible to all, regardless of financial status?
+    - Does this course offer money back?
+    - Is there any money back guarantee if I did not like the course ?
+    - Can I get a refund if I'm not satisfied with the course?
+    - Is there a money-back guarantee available for this course?
+    - Can you tell me if there's a refund policy for this course?
+    - Is there any assurance that I can get my money back if I'm dissatisfied?
+    - Does this course offer a satisfaction guarantee with a refund option?
+    - Can you provide information on the course's refund or cancellation policy?
+    - Are there any conditions or requirements for requesting a refund for this course?
+    - Can you clarify if there's a trial period or grace period for getting a refund?
+    - What are the terms and conditions for requesting a refund for this course?
+    - Can you explain how the money-back guarantee works for this course?
+
+
+    
+
+
+- intent: ask_ninety
+  examples: |
+    - What is the 90 day challenge
+    - What is the 90 days challenge
+    - How do I get 90% refund
+    - Can I get 90% refund?
+    - Is this course available for 90 day challenge
+    - Do you have 90 day challenge for this course
+    - Can I get 90 % refund on this course?
+    - How do I get 90 % refund
+- intent: ask_pre
+  examples: |
+    - What are the prerequisites for this course?
+    - Do I need to know anything before starting this course?
+    - Do I need to be good at DSA to understand this course
+    - Do I need to be good at data structures to understand this course
+    - Are there any requirements for enrolling in this course?
+    - Can you tell me about the background knowledge needed for this course?
+    - What skills or knowledge do I need before taking this course?
+    - Should I have prior experience in programming for this course?
+    - Do I need to be familiar with a specific programming language for this course?
+    - Are there any recommended prerequisites for this course?
+    - Can you provide information on the recommended background for this course?
+    - Is there anything I should study beforehand to better prepare for this course?
+    - Should I have a certain level of understanding in mathematics for this course?
+    - Can you clarify if there are any prerequisites related to software or tools for this course?

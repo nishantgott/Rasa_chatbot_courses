@@ -104,3 +104,85 @@ stories:
     - action: action_select_courses
 
 
+- story: what is the pace of the course
+  steps:
+    - intent: ask_pace
+    - action: action_ask_pace
+
+
+- story: what is the price of the course
+  steps:
+    - intent: ask_price
+    - action: action_ask_price
+
+- story: what is the duration of the course
+  steps:
+    - intent: ask_duration
+    - action: action_ask_duration
+
+- story: who is the mentor of the course
+  steps:
+    - intent: ask_mentor
+    - action: action_ask_mentor
+
+
+- story: what is the overview of the course
+  steps:
+    - intent: ask_overview
+    - action: action_ask_overview
+
+- story: is this course online or offline
+  steps:
+    - intent: ask_online
+    - action: utter_online
+
+- story: does this course have doubt support
+  steps:
+    - intent: ask_doubt_support
+    - action: action_ask_doubt_support
+
+- story: rating of the course
+  steps:
+    - intent: ask_rating
+    - action: action_ask_rating
+
+- story: testimonials of the course
+  steps:
+    - intent: ask_testimonials
+    - action: action_ask_testimonials
+
+- story: kind of the course
+  steps:
+    - intent: ask_kind
+    - action: action_ask_kind
+
+- story: description of the course
+  steps:
+    - intent: ask_description
+    - action: action_ask_description
+
+- story: certification of the course
+  steps:
+    - intent: ask_certificate
+    - action: utter_certificate
+
+- story: difficulty of the course
+  steps:
+    - intent: ask_difficulty
+    - action: action_ask_difficulty
+
+- story: aid for the course
+  steps:
+    - intent: ask_aid
+    - action: action_ask_aid
+
+- story: what is 90 days challenge
+  steps:
+    - intent: ask_ninety
+    - action: utter_ninety
+
+- story: what are the pre-requisites
+  steps:
+    - intent: ask_pre
+    - action: action_ask_pre
+

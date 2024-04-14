@@ -19,6 +19,21 @@ def connect_to_mongodb(mongo_url):
 mongo_url = "mongodb+srv://nishantgk2004:heBmoS6edFGkPTBr@cluster0.jr4xu3z.mongodb.net/ecommerce"
 db = connect_to_mongodb(mongo_url)
 
+def get_data(course_no, col, dispatcher):
+    try:
+        course_no = int(course_no)
+    except ValueError:
+        dispatcher.utter_message(text="Invalid course number. Please provide a valid course number.")
+        return []
+
+    try:
+        courses_collection = db["courses"]
+        course = courses_collection.find_one({"course_no": course_no})
+        courses_message = course[col]
+    except Exception as e:
+        print("Error retrieving data from MongoDB:", str(e))
+
+    return courses_message
 
 class ActionGiveCourses(Action):
 
@@ -362,3 +377,332 @@ class ActionSelectCourses(Action):
         # Set the course_no slot with the valid course number
         dispatcher.utter_message(text="You have selected the course "+str(course_no) + " - " + courses_message)
         return [SlotSet("course_no", course_no)]
+
+
+class ActionAskPace(Action):
+
+    def name(self) -> Text:
+        return "action_ask_pace"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        # Convert course_no to integer
+        try:
+            course_no = int(course_no)
+        except ValueError:
+            dispatcher.utter_message(text="Invalid course number. Please provide a valid course number.")
+            return []
+
+        try:
+            courses_collection = db["courses"]
+            course = courses_collection.find_one({"course_no": course_no})
+            courses_message = course['pace']
+        except Exception as e:
+            print("Error retrieving data from MongoDB:", str(e))
+
+        # Set the course_no slot with the valid course number
+        if courses_message == "Self-paced":
+            dispatcher.utter_message(text = "It is a self paced course. You can join the course anytime. All of the content will be available once you get enrolled. You can finish it at your own decided speed.")
+        else:
+            dispatcher.utter_message(text = "It is a live course. The schedule can be viewed in the course page")
+
+        return [SlotSet("course_no", course_no)]
+
+
+class ActionAskPrice(Action):
+
+    def name(self) -> Text:
+        return "action_ask_price"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        try:
+            course_no = int(course_no)
+        except ValueError:
+            dispatcher.utter_message(text="Invalid course number. Please provide a valid course number.")
+            return []
+
+        try:
+            courses_collection = db["courses"]
+            course = courses_collection.find_one({"course_no": course_no})
+            courses_message = course['price']
+        except Exception as e:
+            print("Error retrieving data from MongoDB:", str(e))
+
+        if courses_message == 0:
+            dispatcher.utter_message(text = "It is a free course")
+        else:
+            dispatcher.utter_message(text = "The price of this course is "+ str(courses_message))
+
+        return [SlotSet("course_no", course_no)]
+
+
+class ActionAskDuration(Action):
+
+    def name(self) -> Text:
+        return "action_ask_duration"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        try:
+            course_no = int(course_no)
+        except ValueError:
+            dispatcher.utter_message(text="Invalid course number. Please provide a valid course number.")
+            return []
+
+        try:
+            courses_collection = db["courses"]
+            course = courses_collection.find_one({"course_no": course_no})
+            courses_message = course['duration']
+        except Exception as e:
+            print("Error retrieving data from MongoDB:", str(e))
+
+        dispatcher.utter_message(text = courses_message)
+
+        return []
+
+
+class ActionAskMentor(Action):
+
+    def name(self) -> Text:
+        return "action_ask_mentor"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        courses_message = get_data(course_no, 'mentor', dispatcher)
+
+        dispatcher.utter_message(text = courses_message)
+
+        return []
+
+
+class ActionAskOverview(Action):
+
+    def name(self) -> Text:
+        return "action_ask_overview"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        courses_message = get_data(course_no, 'overview', dispatcher)
+
+        dispatcher.utter_message(text = "This course is updated to stay relevant and stands out from other courses in the market.\n")
+        dispatcher.utter_message(text = courses_message)
+
+        return []
+
+
+class ActionAskDoubtSupport(Action):
+
+    def name(self) -> Text:
+        return "action_ask_doubt_support"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        courses_message = get_data(course_no, 'doubt_support', dispatcher)
+
+        dispatcher.utter_message(text = courses_message)
+
+        return []
+
+
+class ActionAskRating(Action):
+
+    def name(self) -> Text:
+        return "action_ask_rating"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        courses_message = get_data(course_no, 'rating', dispatcher)
+
+        dispatcher.utter_message(text = "The rating of this course is " + str(courses_message))
+
+        return []
+
+
+class ActionAskTestimonials(Action):
+
+    def name(self) -> Text:
+        return "action_ask_testimonials"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        courses_message = get_data(course_no, 'testimonials', dispatcher)
+
+        dispatcher.utter_message(text = "Here are a few testimonials from people who have taken this course")
+        dispatcher.utter_message(text = courses_message)
+
+        return []
+
+
+class ActionKind(Action):
+
+    def name(self) -> Text:
+        return "action_ask_kind"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        courses_message1 = get_data(course_no, 'pace', dispatcher)
+        courses_message2 = get_data(course_no, 'category', dispatcher)
+
+        dispatcher.utter_message(text = "This is a " + courses_message1 + " course for "+courses_message2)
+
+        return []
+
+
+class ActionDescription(Action):
+
+    def name(self) -> Text:
+        return "action_ask_description"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        courses_message = get_data(course_no, 'description', dispatcher)
+
+        dispatcher.utter_message(text = courses_message)
+
+        return []
+
+
+class ActionDifficulty(Action):
+
+    def name(self) -> Text:
+        return "action_ask_difficulty"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        courses_message = get_data(course_no, 'difficulty', dispatcher)
+
+        dispatcher.utter_message(text = "The difficulty rating of this course is " + courses_message)
+
+        return []
+
+
+class ActionAskAid(Action):
+
+    def name(self) -> Text:
+        return "action_ask_aid"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        courses_message = get_data(course_no, 'price', dispatcher)
+
+        if courses_message == 0:
+            dispatcher.utter_message(text="This is a free course.")
+        else:
+            courses_price = float(courses_message)  # Convert price to float
+            refund = courses_price * 0.9  # Calculate refund amount
+            dispatcher.utter_message(text=f"This course has a 90 day challenge, where 90% refund is given if you complete the course in 90 days!\n"
+                                           f"You pay {courses_price} now and get back {refund:.2f} after successfully finishing the challenge.")
+        return []
+
+
+class ActionAskPre(Action):
+
+    def name(self) -> Text:
+        return "action_ask_pre"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        courses_message = get_data(course_no, 'prereq', dispatcher)
+        dsa = get_data(course_no, 'dsa_prerequisite', dispatcher)
+        if dsa=="yes":
+            courses_message += ". But having a basic understanding of Data Structures and Algorithms will make it easier"
+
+        dispatcher.utter_message(text = courses_message)
+
+        return []
+
+
+
+

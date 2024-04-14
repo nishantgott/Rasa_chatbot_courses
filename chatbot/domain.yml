@@ -22,6 +22,22 @@ intents:
   - give_paced_courses
   - give_live_courses
   - select_course
+  - ask_pace
+  - ask_price
+  - ask_duration
+  - ask_mentor
+  - ask_overview
+  - ask_online
+  - ask_doubt_support
+  - ask_rating
+  - ask_testimonials
+  - ask_kind
+  - ask_description
+  - ask_certificate
+  - ask_difficulty
+  - ask_aid
+  - ask_ninety
+  - ask_pre
 
 entities:
   - course_no
@@ -53,6 +69,29 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  utter_online:
+  - text: "It is an online course. You can check out our offline classroom courses at https://www.geeksforgeeks.org/courses/offline-courses "
+
+  utter_certificate:
+  - text: "Once the course is completed. You'll be getting a course completion certificate.\n \nPerks of our certificates:
+
+ - Credible Validation\n
+- Continuous Relevance\n
+- Helps in Career Advancement\n
+- Lifetime Validity"
+
+  utter_ninety:
+  - text: "To qualify for the refund you must complete 90% of the course content within 90 days from the date of purchase. The content you have to cover in each section of the course is as follows:\n
+
+
+
+Chapter & Practice: 90% including Videos, Articles, Problems and Quiz \n
+
+Contest: You need to solve at least 90% of the Contests \n
+
+Secure the Course certificate by achieving the cut-off Scores \n"
+
+
 actions:
   - action_give_courses
   - action_give_categories
@@ -68,6 +107,19 @@ actions:
   - action_give_paced_courses
   - action_give_live_courses
   - action_select_courses
+  - action_ask_pace
+  - action_ask_price
+  - action_ask_duration
+  - action_ask_mentor
+  - action_ask_overview
+  - action_ask_doubt_support
+  - action_ask_rating
+  - action_ask_testimonials
+  - action_ask_kind
+  - action_ask_description
+  - action_ask_difficulty
+  - action_ask_aid
+  - action_ask_pre
 
 session_config:
   session_expiration_time: 60
