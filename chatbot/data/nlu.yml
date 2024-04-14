@@ -275,3 +275,13 @@ nlu:
     - Can you show me the list of courses with live instruction?
     - Do you offer any courses that include live webinars or live lectures?
     - Are there any options for participating in live classes?
+
+- intent: select_course
+  examples: |
+    - [1](course_no)
+    - [2](course_no)
+    - [3](course_no)
+    - please choose course [4](course_no)
+    - please choose course [12](course_no)
+    - choose [13](course_no)
+    - [20](course_no)

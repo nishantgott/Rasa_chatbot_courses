@@ -2,6 +2,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from pymongo import MongoClient
+from rasa_sdk.events import SlotSet
 
 def connect_to_mongodb(mongo_url):
     try:
@@ -322,3 +323,42 @@ class ActionGiveLiveCourses(Action):
         dispatcher.utter_message(text="PLEASE CHOOSE THE COURSE NUMBER")
 
         return []
+
+
+class ActionSelectCourses(Action):
+
+    def name(self) -> Text:
+        return "action_select_courses"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Get the course number entity from the latest user message
+        course_no = next(tracker.get_latest_entity_values("course_no"), None)
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        # Convert course_no to integer
+        try:
+            course_no = int(course_no)
+        except ValueError:
+            dispatcher.utter_message(text="Invalid course number. Please provide a valid course number.")
+            return []
+
+        # Check if the course number is within a valid range (e.g., 1 to 40)
+        if course_no <= 0 or course_no > 40:
+            dispatcher.utter_message(text="Course number not available. Please choose another course.")
+            return [SlotSet("course_no", None)]
+
+        try:
+            courses_collection = db["courses"]
+            course = courses_collection.find_one({"course_no": course_no})
+            courses_message = course['course_name']
+        except Exception as e:
+            print("Error retrieving data from MongoDB:", str(e))
+
+        # Set the course_no slot with the valid course number
+        dispatcher.utter_message(text="You have selected the course "+str(course_no) + " - " + courses_message)
+        return [SlotSet("course_no", course_no)]

@@ -21,6 +21,17 @@ intents:
   - give_paid_courses
   - give_paced_courses
   - give_live_courses
+  - select_course
+
+entities:
+  - course_no
+
+slots:
+  course_no:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: course_no
 
 responses:
   utter_greet:
@@ -42,7 +53,6 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-
 actions:
   - action_give_courses
   - action_give_categories
@@ -57,6 +67,7 @@ actions:
   - action_give_paid_courses
   - action_give_paced_courses
   - action_give_live_courses
+  - action_select_courses
 
 session_config:
   session_expiration_time: 60

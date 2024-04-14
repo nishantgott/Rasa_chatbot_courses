@@ -98,4 +98,9 @@ stories:
     - intent: give_live_courses
     - action: action_give_live_courses
 
+- story: select the course
+  steps:
+    - intent: select_course
+    - action: action_select_courses
+
 
