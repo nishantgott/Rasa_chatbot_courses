@@ -197,4 +197,8 @@ stories:
     - action: utter_welcome
     - action: action_export_chat_data
 
+- story: fallback
+  steps:
+    - intent: nlu_fallback
+    - action: action_default_fallback
 

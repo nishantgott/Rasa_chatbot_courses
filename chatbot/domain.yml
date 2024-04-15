@@ -131,6 +131,7 @@ actions:
   - action_ask_pre
   - action_ask_link
   - action_export_chat_data
+  - action_default_fallback
 
 session_config:
   session_expiration_time: 60

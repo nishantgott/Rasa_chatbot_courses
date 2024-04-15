@@ -334,6 +334,8 @@ nlu:
 
 - intent: ask_price
   examples: |
+    - Is it expensive 
+    - Is it cheap 
     - Is it a free course
     - Is it a paid course
     - What is the price of this course 
@@ -393,6 +395,8 @@ nlu:
 
 - intent: ask_overview
   examples: |
+    - Tell me in detail about the course
+    - Can you give outcomes of the course?
     - What are the objectives of the course
     - What is the overview of this course?
     - What is the overview ?
@@ -522,6 +526,7 @@ nlu:
 
 - intent: ask_description
   examples: |
+    - Tell me about it
     - What is the description of this course?
     - Describe this course
     - Describe it
@@ -562,6 +567,7 @@ nlu:
     - How hard is this course?
     - How hard is it?
     - How easy is it?
+    - Is it simple
     - Is it difficult
     - Can you provide insight into the level of difficulty for this course?
     - How challenging is this course for students?
@@ -615,6 +621,7 @@ nlu:
   examples: |
     - What are the prerequisites for this course?
     - Do I need to know anything before starting this course?
+    - Do I need to learn anything in advance before starting this course?
     - Do I need to be good at DSA to understand this course
     - Do I need to be good at data structures to understand this course
     - Are there any requirements for enrolling in this course?
@@ -630,6 +637,9 @@ nlu:
 
 - intent: ask_link
   examples: |
+    - Where can I find this course?
+    - Where is it?
+    - Where is this course
     - Can you give a link to this course
     - Can you take me to the course
     - Give the link
