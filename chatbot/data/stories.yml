@@ -186,3 +186,15 @@ stories:
     - intent: ask_pre
     - action: action_ask_pre
 
+- story: what is the link
+  steps:
+    - intent: ask_link
+    - action: action_ask_link
+
+- story: thanks
+  steps:
+    - intent: thanks
+    - action: utter_welcome
+    - action: action_export_chat_data
+
+

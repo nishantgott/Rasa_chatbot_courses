@@ -3,6 +3,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from pymongo import MongoClient
 from rasa_sdk.events import SlotSet
+import csv
 
 def connect_to_mongodb(mongo_url):
     try:
@@ -18,6 +19,7 @@ def connect_to_mongodb(mongo_url):
 
 mongo_url = "mongodb+srv://nishantgk2004:heBmoS6edFGkPTBr@cluster0.jr4xu3z.mongodb.net/ecommerce"
 db = connect_to_mongodb(mongo_url)
+
 
 def get_data(course_no, col, dispatcher):
     try:
@@ -289,7 +291,6 @@ class ActionGivePaidCourses(Action):
         dispatcher.utter_message(text="PLEASE CHOOSE THE COURSE NUMBER")
 
         return []
-
 
 
 class ActionGivePacedCourses(Action):
@@ -702,6 +703,53 @@ class ActionAskPre(Action):
         dispatcher.utter_message(text = courses_message)
 
         return []
+
+
+class ActionAskLink(Action):
+
+    def name(self) -> Text:
+        return "action_ask_link"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        course_no = tracker.get_slot("course_no")
+
+        if course_no is None:
+            dispatcher.utter_message(text="Course number not provided. Please provide a course number.")
+            return []
+
+        courses_message = get_data(course_no, 'link', dispatcher)
+
+        dispatcher.utter_message(text = "Course link: "+courses_message)
+
+        return []
+
+
+
+class ActionExportChatData(Action):
+    def name(self) -> Text:
+        return "action_export_chat_data"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extract user data and chat transcripts
+        user_id = tracker.sender_id
+        user_name = tracker.get_slot("user_name")
+        chat_transcripts = []
+        for event in tracker.events:
+            if event.get("event") == "user":
+                chat_transcripts.append(event.get("text"))
+        file_path = "chat_data.csv"
+        with open(file_path, mode='a', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            writer.writerow(["User ID", "User Name", "Chat Transcript"])
+            writer.writerow([user_id, user_name, "\n".join(chat_transcripts)])
+        dispatcher.utter_message(text="Chat data has been exported.")
+        return []
+
+
 
 
 

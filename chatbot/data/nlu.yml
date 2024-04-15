@@ -16,6 +16,28 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+- intent: thanks
+  examples: |
+    - Thank you
+    - Thanks a lot
+    - Thanks so much
+    - Thank you very much
+    - Thanks for your help
+    - Thank you for assisting me
+    - I appreciate your help
+    - Thanks for the assistance
+    - Thanks for the support
+    - Thank you for the information
+    - Thanks for your time
+    - Thank you for answering my questions
+    - Thanks for the guidance
+    - I'm grateful for your assistance
+    - Thanks, that's helpful
+    - I appreciate it
+    - Thanks for everything
+    - Thanks for the clarification
+    - Thanks, you've been very helpful
+
 
 - intent: goodbye
   examples: |
@@ -371,6 +393,7 @@ nlu:
 
 - intent: ask_overview
   examples: |
+    - What are the objectives of the course
     - What is the overview of this course?
     - What is the overview ?
     - Does this course stand out from other courses
@@ -604,3 +627,36 @@ nlu:
     - Is there anything I should study beforehand to better prepare for this course?
     - Should I have a certain level of understanding in mathematics for this course?
     - Can you clarify if there are any prerequisites related to software or tools for this course?
+
+- intent: ask_link
+  examples: |
+    - Can you give a link to this course
+    - Can you take me to the course
+    - Give the link
+    - What is the link
+    - Where can I find more information about this course?
+    - Can you provide a direct link to access this course?
+    - Can you share the website or platform where this course is hosted?
+    - Is there a specific webpage I can visit to learn more about this course?
+    - Can you provide the URL or website link for this course?
+    - Where can I go to find details about enrollment or registration for this course?
+    - Can you direct me to the online platform where this course is offered?
+    - How do I access the course materials or curriculum for this course?
+    - Can you give me the web address for accessing this course?
+
+- intent: ask_feedback
+  examples: |
+    - Can I give feedback?
+    - I want to give feedback
+    - How can I provide feedback?
+    - Is there a way to share my thoughts about this chatbot?
+    - Can I share my feedback with you?
+    - Where should I give feedback?
+    - Do you accept feedback?
+    - Is there a feedback option available?
+    - How do I provide feedback?
+    - Can I offer some feedback?
+    - Is there a feedback form?
+    - Where can I leave feedback?
+    
+

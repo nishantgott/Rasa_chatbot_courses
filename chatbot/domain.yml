@@ -4,6 +4,7 @@ intents:
   - greet
   - goodbye
   - affirm
+  - thanks
   - deny
   - mood_great
   - mood_unhappy
@@ -38,6 +39,8 @@ intents:
   - ask_aid
   - ask_ninety
   - ask_pre
+  - ask_link
+  - ask_feedback
 
 entities:
   - course_no
@@ -72,6 +75,9 @@ responses:
   utter_online:
   - text: "It is an online course. You can check out our offline classroom courses at https://www.geeksforgeeks.org/courses/offline-courses "
 
+  utter_feedback:
+  - text: "We would love to take your feedback. Please proceed!"
+
   utter_certificate:
   - text: "Once the course is completed. You'll be getting a course completion certificate.\n \nPerks of our certificates:
 
@@ -90,6 +96,9 @@ Chapter & Practice: 90% including Videos, Articles, Problems and Quiz \n
 Contest: You need to solve at least 90% of the Contests \n
 
 Secure the Course certificate by achieving the cut-off Scores \n"
+
+  utter_welcome:
+  - text: "You are very welcome!"
 
 
 actions:
@@ -120,6 +129,8 @@ actions:
   - action_ask_difficulty
   - action_ask_aid
   - action_ask_pre
+  - action_ask_link
+  - action_export_chat_data
 
 session_config:
   session_expiration_time: 60
