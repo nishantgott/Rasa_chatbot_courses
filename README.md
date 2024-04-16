@@ -3,6 +3,12 @@
 This is a chatbot designed to help students purchase courses on geeksforgeeks. They can choose a course and ask any questions they have in mind regarding the course  
 
 
+## Try the bot
+
+Send "join trail-passage" to 14155238886
+Then send Hey to the bot and start asking questions!
+
+
 ## Install dependencies
 
 Run:
