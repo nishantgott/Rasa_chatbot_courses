@@ -14,7 +14,8 @@
         }
 
         #chat-container {
-            max-width: 400px;
+            width: 80%;
+            /* Adjust width as needed */
             margin: 20px auto;
             background-color: #fff;
             border-radius: 8px;
@@ -24,7 +25,10 @@
 
         #chat-messages {
             padding: 10px;
-            height: 300px;
+            min-height: 300px;
+            /* Set minimum height */
+            max-height: 500px;
+            /* Set maximum height */
             overflow-y: auto;
         }
 
@@ -91,10 +95,13 @@
                     message: userInput
                 })
             });
-            const responseData = await response.json();
             displayMessage(userInput, 'user');
-            displayMessage(responseData[0].text, 'bot');
+            const responseData = await response.json();
+            for (const messageData of responseData) {
+                displayMessage(messageData.text, 'bot');
+            }
         }
+
 
         function displayMessage(message, sender) {
             const chatMessages = document.getElementById('chat-messages');
@@ -103,6 +110,7 @@
             messageElement.innerText = message;
             chatMessages.appendChild(messageElement);
             document.getElementById('user-input').value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
         }
     </script>
 </body>
