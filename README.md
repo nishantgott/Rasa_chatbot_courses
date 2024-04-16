@@ -13,15 +13,15 @@ pip install -r requirements.txt
 
 ## Run the bot
 
-Use `rasa train` to train a model.
+Use `rasa train` to train a model. (Use "cd chatbot" first if not in chatbot directory")
 
-Then, to run, first set up your action server in one terminal window:
+Then, to run, first set up your action server in one terminal window: (Use "cd chatbot" first if not in chatbot directory")
 ```bash
 rasa run actions
 
 ```
 
-In another window, to talk to the bot, run:
+In another window, to talk to the bot, run: (Use "cd chatbot" first if not in chatbot directory")
 ```
 rasa shell
 
