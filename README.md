@@ -3,10 +3,9 @@
 This is a chatbot designed to help students purchase courses on geeksforgeeks. They can choose a course and ask any questions they have in mind regarding the course  
 
 
-## Try the bot
+## Try the deployed chatbot now!
 
-Send "join trail-passage" to +14155238886
-Then send Hey to the bot and start asking questions!
+Head over to [https://polite-gelato-17df59.netlify.app/](https://polite-gelato-17df59.netlify.app/) to try the chatbot
 
 
 ## Install dependencies
