@@ -5,7 +5,7 @@ This is a chatbot designed to help students purchase courses on geeksforgeeks. T
 
 ## Try the bot
 
-Send "join trail-passage" to 14155238886
+Send "join trail-passage" to +14155238886
 Then send Hey to the bot and start asking questions!
 
 
